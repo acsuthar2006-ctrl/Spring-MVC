@@ -12,20 +12,26 @@
 
 <form:form action="${pageContext.request.contextPath}/submitForm"
            modelAttribute="user" method="POST">
+  <style>
+    .error { color: red; font-size: 0.9em; margin-left: 10px; }
+  </style>
   <div>
     <label>Name:</label>
     <form:input path="name"/>
+    <form:errors path="name" cssClass="error"/>
   </div>
   <br/>
   <div>
     <label>Email:</label>
     <form:input path="email" type="email"/>
+    <form:errors path="email" cssClass="error"/>
   </div>
   <br/>
   <div>
     <label>Gender:</label>
     Male <form:radiobutton path="gender" value="Male"/>
     Female <form:radiobutton path="gender" value="Female"/>
+    <form:errors path="gender" cssClass="error"/>
   </div>
   <br/>
   <div>
@@ -33,6 +39,7 @@
     Reading <form:checkbox path="hobbies" value="Reading"/>
     Gaming <form:checkbox path="hobbies" value="Gaming"/>
     Traveling <form:checkbox path="hobbies" value="Traveling"/>
+    <form:errors path="hobbies" cssClass="error"/>
   </div>
   <br/>
   <input type="submit" value="Register"/>
