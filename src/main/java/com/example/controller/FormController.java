@@ -15,7 +15,10 @@ public class FormController {
 
 	@GetMapping("/form")
 	public String showForm(Model model) {
-		model.addAttribute("user", new User());
+		User user = new User();
+		user.setGender("Male");
+		user.setName("Aarya");
+		model.addAttribute("user", user);
 		model.addAttribute("title", "User Registration Form");
 		return "form";
 	}
