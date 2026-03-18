@@ -9,15 +9,38 @@ import org.springframework.validation.BindingResult;
 import jakarta.validation.Valid;
 
 import com.example.model.User;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class FormController {
 
+    @ModelAttribute("countryList")
+    public List<String> getCountryList() {
+        return Arrays.asList("USA", "India", "UK", "Canada", "Australia");
+    }
+
+    @ModelAttribute("skillsList")
+    public List<String> getSkillsList() {
+        return Arrays.asList("Java", "Spring Boot", "React", "SQL", "Python", "C++");
+    }
+
+    @ModelAttribute("hobbiesList")
+    public List<String> getHobbiesList() {
+        return Arrays.asList("Reading", "Gaming", "Traveling", "Sports", "Music");
+    }
+
+    @ModelAttribute("genderList")
+    public List<String> getGenderList() {
+        return Arrays.asList("Male", "Female", "Other");
+    }
+
 	@GetMapping("/form")
 	public String showForm(Model model) {
 		User user = new User();
+		user.setUserId("USR-12345");
 		user.setGender("Male");
-		user.setName("Aarya");
+		user.setSubscribeNewsletter(true);
 		model.addAttribute("user", user);
 		model.addAttribute("title", "User Registration Form");
 		return "form";
@@ -32,7 +55,6 @@ public class FormController {
 
 		model.addAttribute("title", "Registration Success");
 		model.addAttribute("message", "Thank you for registering, " + user.getName() + "!");
-		// The 'user' object is automatically added to the model by @ModelAttribute
 		return "result";
 	}
 }

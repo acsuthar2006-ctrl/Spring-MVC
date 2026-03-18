@@ -9,23 +9,35 @@
 <body>
 
 <h1>${title}</h1>
-<p>${message}</p>
+<p style="color: green; font-weight: bold">${message}</p>
 
 <h3>Submitted Details:</h3>
 
 <ul>
-  <li><strong>Name:</strong> ${user.name}</li>
-  <li><strong>Email:</strong> ${user.email}</li>
-  <li><strong>Gender:</strong> ${user.gender}</li>
-
+  <li><strong>User ID (Hidden):</strong> ${user.userId}</li>
+  <li><strong>Name (Input Text):</strong> ${user.name}</li>
+  <li><strong>Email (Input Email):</strong> ${user.email}</li>
+  <li><strong>Password:</strong> (hidden for security) - length: ${user.password.length()}</li>
+  <li><strong>Address (Textarea):</strong> ${user.address}</li>
+  <li><strong>Gender (Radio):</strong> ${user.gender}</li>
   <li>
-    <strong>Hobbies:</strong>
+    <strong>Hobbies (Checkboxes):</strong>
     <ul>
       <c:forEach var="hobby" items="${user.hobbies}">
         <li>${hobby}</li>
       </c:forEach>
     </ul>
   </li>
+  <li><strong>Country (Select):</strong> ${user.country}</li>
+  <li>
+    <strong>Skills (Multi-select Select):</strong>
+    <ul>
+      <c:forEach var="skill" items="${user.skills}">
+        <li>${skill}</li>
+      </c:forEach>
+    </ul>
+  </li>
+  <li><strong>Subscribed (Checkbox):</strong> ${user.subscribeNewsletter ? 'Yes' : 'No'}</li>
 </ul>
 
 <hr>

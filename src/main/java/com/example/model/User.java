@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Pattern;
 
 public class User {
 
+    private String userId;
+
     @NotBlank(message = "Name cannot be empty")
     private String name;
 
@@ -18,41 +20,54 @@ public class User {
       message = "Only Gmail addresses are allowed")
     private String email;
 
+    @NotBlank(message = "Password cannot be empty")
+    private String password;
+
+    private String address;
+
     @NotEmpty(message = "Please select a gender")
-    private String gender;        // radio button
+    private String gender;
 
     @NotEmpty(message = "Please select at least one hobby")
-    private List<String> hobbies; // checkbox
+    private List<String> hobbies;
+    
+    private boolean subscribeNewsletter;
+    
+    @NotBlank(message = "Please select a country")
+    private String country;
+    
+    @NotEmpty(message = "Please select at least one skill")
+    private List<String> skills;
 
-    public String getName() {
-        return name;
-    }
+    // Getters and Setters
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getUserId() { return userId; }
+    public void setUserId(String userId) { this.userId = userId; }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public String getGender() {
-        return gender;
-    }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
 
-    public List<String> getHobbies() {
-        return hobbies;
-    }
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
 
-    public void setHobbies(List<String> hobbies) {
-        this.hobbies = hobbies;
-    }
+    public List<String> getHobbies() { return hobbies; }
+    public void setHobbies(List<String> hobbies) { this.hobbies = hobbies; }
+
+    public boolean isSubscribeNewsletter() { return subscribeNewsletter; }
+    public void setSubscribeNewsletter(boolean subscribeNewsletter) { this.subscribeNewsletter = subscribeNewsletter; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
+
+    public List<String> getSkills() { return skills; }
+    public void setSkills(List<String> skills) { this.skills = skills; }
 }
