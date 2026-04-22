@@ -18,7 +18,11 @@
   <li><strong>Name (Input Text):</strong> ${user.name}</li>
   <li><strong>Email (Input Email):</strong> ${user.email}</li>
   <li><strong>Password:</strong> (hidden for security) - length: ${user.password.length()}</li>
+  <li><strong>Phone Number:</strong> ${user.phoneNumber}</li>
+  <li><strong>Age:</strong> ${user.age}</li>
+  <li><strong>Date of Birth:</strong> ${user.dateOfBirth}</li>
   <li><strong>Address (Textarea):</strong> ${user.address}</li>
+  <li><strong>PIN Code:</strong> ${user.pinCode}</li>
   <li><strong>Gender (Radio):</strong> ${user.gender}</li>
   <li>
     <strong>Hobbies (Checkboxes):</strong>
@@ -37,7 +41,10 @@
       </c:forEach>
     </ul>
   </li>
+  <li><strong>Experience (Years):</strong> ${user.experienceYears}</li>
+  <li><strong>Short Bio:</strong> ${user.bio}</li>
   <li><strong>Subscribed (Checkbox):</strong> ${user.subscribeNewsletter ? 'Yes' : 'No'}</li>
+  <li><strong>Terms Accepted:</strong> ${user.termsAccepted ? 'Yes' : 'No'}</li>
 </ul>
 
 <hr>

@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 import com.example.model.User;
 import java.util.Arrays;
 import java.util.List;
+import java.time.LocalDate;
 
 @Controller
 public class FormController {
@@ -41,6 +42,9 @@ public class FormController {
 		user.setUserId("USR-12345");
 		user.setGender("Male");
 		user.setSubscribeNewsletter(true);
+		user.setAge(25);
+		user.setDateOfBirth(LocalDate.of(2000, 1, 1));
+		user.setExperienceYears(2);
 		model.addAttribute("user", user);
 		model.addAttribute("title", "User Registration Form");
 		return "form";

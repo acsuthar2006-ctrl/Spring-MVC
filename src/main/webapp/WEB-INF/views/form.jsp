@@ -41,9 +41,33 @@
   </div>
 
   <div class="form-group">
+    <label>Phone Number:</label>
+    <form:input path="phoneNumber" placeholder="9876543210"/>
+    <form:errors path="phoneNumber" cssClass="error"/>
+  </div>
+
+  <div class="form-group">
+    <label>Age:</label>
+    <form:input path="age" type="number" min="18" max="60"/>
+    <form:errors path="age" cssClass="error"/>
+  </div>
+
+  <div class="form-group">
+    <label>Date of Birth:</label>
+    <form:input path="dateOfBirth" type="date"/>
+    <form:errors path="dateOfBirth" cssClass="error"/>
+  </div>
+
+  <div class="form-group">
     <label>Address (Textarea):</label>
     <form:textarea path="address" rows="3" cols="30"/>
     <form:errors path="address" cssClass="error"/>
+  </div>
+
+  <div class="form-group">
+    <label>PIN Code:</label>
+    <form:input path="pinCode" placeholder="6-digit PIN"/>
+    <form:errors path="pinCode" cssClass="error"/>
   </div>
 
   <div class="form-group">
@@ -73,10 +97,28 @@
     <span class="hint">Hold CTRL or CMD to select multiple</span>
     <form:errors path="skills" cssClass="error"/>
   </div>
+
+  <div class="form-group">
+    <label>Experience (Years):</label>
+    <form:input path="experienceYears" type="number" min="0" max="40"/>
+    <form:errors path="experienceYears" cssClass="error"/>
+  </div>
+
+  <div class="form-group">
+    <label>Short Bio:</label>
+    <form:textarea path="bio" rows="4" cols="30"/>
+    <form:errors path="bio" cssClass="error"/>
+  </div>
   
   <div class="form-group">
     <label>Subscribe (Checkbox):</label>
     <form:checkbox path="subscribeNewsletter" value="true"/> Yes, send me newsletter updates!
+  </div>
+
+  <div class="form-group">
+    <label>Terms:</label>
+    <form:checkbox path="termsAccepted" value="true"/> I accept terms and conditions.
+    <form:errors path="termsAccepted" cssClass="error"/>
   </div>
 
   <div style="margin-top: 20px; margin-left: 140px;">
